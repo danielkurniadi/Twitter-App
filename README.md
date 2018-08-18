@@ -1,5 +1,5 @@
 
-# Twitter App <img src = "appicon/Icon-Small@2x.png">
+# Twitter App <img src="img/icon/title_icon@2x.png">
  Twitter application clone, a popular social media application that is used by millions worldwide. Prophecy says US president will one day start a war using this social media XD. Meanwhile, keep calm and keep twitting ...
 
 <p>
