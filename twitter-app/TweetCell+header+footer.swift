@@ -27,7 +27,7 @@ class TweetCell: DatasourceCell {
             
             messageTextView.attributedText = attributedText
             
-            profileImage.image = tweet.follower.profileImage
+            profileImage.loadImage(urlString: tweet.follower.profileURL) 
         }
     }
     
@@ -40,8 +40,8 @@ class TweetCell: DatasourceCell {
         return textview
     }()
     
-    let profileImage : UIImageView = {
-        let imageview = UIImageView()
+    let profileImage : CachedImageView = {
+        let imageview = CachedImageView()
         imageview.image = UIImage(named: "donni_profile")
         imageview.layer.cornerRadius = 5
         imageview.clipsToBounds = true

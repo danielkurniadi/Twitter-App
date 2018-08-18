@@ -15,15 +15,17 @@ class FollowerCell: DatasourceCell {
     override var datasourceItem: Any?{
         didSet{
             guard let follower = datasourceItem as? Follower else {return}
-            profileImage.image = follower.profileImage
             nameLabel.text = follower.twitterName
             usernameLabel.text = follower.username
             userTextView.text = follower.wallpost
+            profileImage.image = follower.profileImage
+            profileImage.loadImage(urlString: follower.profileURL)
+            
         }
     }
     
-    let profileImage : UIImageView = {
-        let imageview = UIImageView()
+    let profileImage : CachedImageView = {
+        let imageview = CachedImageView()
         imageview.image = UIImage(named: "donni_profile")
         imageview.layer.cornerRadius = 5
         imageview.clipsToBounds = true
